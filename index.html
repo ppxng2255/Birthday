@@ -22,28 +22,54 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      padding: 20px;
     }
 
     .container {
       position: relative;
       z-index: 2;
+      max-width: 900px;
+      width: 100%;
     }
 
     #countdown {
       font-size: 120px;
       font-weight: bold;
-      color: hotpink;
-      text-shadow: 0 0 20px pink, 0 0 40px deeppink;
+      background: linear-gradient(45deg, #04c37d, #017ef3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       animation: zoom 1s infinite;
     }
 
     #intro {
       display: none;
-      font-size: 48px;
+      font-size: 38px;
+      font-weight: bold;
+      line-height: 1.5;
+      background: linear-gradient(45deg, #04c37d, #017ef3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeIn 1s ease;
+    }
+
+    #cakeSection {
+      display: none;
+      animation: fadeIn 1.2s ease;
+    }
+
+    #cakeImg {
+      width: 220px;
+      max-width: 70vw;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.8);
+      margin-bottom: 14px;
+    }
+
+    #cakeText {
+      font-size: 40px;
       font-weight: bold;
       color: hotpink;
-      text-shadow: 0 0 10px pink, 0 0 20px deeppink;
-      animation: fadeIn 1s ease;
+      text-shadow: 0 0 12px pink, 0 0 24px deeppink;
     }
 
     #content {
@@ -53,19 +79,21 @@
 
     #content h1 {
       font-size: 64px;
-      color: rgb(253, 253, 253);
+      color: #ffffff;
       text-shadow: 0 0 20px pink, 0 0 40px deeppink;
+      margin-bottom: 10px;
     }
 
     #content h2 {
       font-size: 40px;
       margin-top: 10px;
+      color: #ffd6eb;
     }
 
     #content p {
       font-size: 22px;
       margin-top: 15px;
-      line-height: 1.6;
+      line-height: 1.8;
       color: #ffd6eb;
     }
 
@@ -93,6 +121,7 @@
       animation: fall linear infinite;
       pointer-events: none;
       user-select: none;
+      z-index: 1;
     }
 
     @keyframes fall {
@@ -108,8 +137,45 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
+      from {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      #countdown {
+        font-size: 80px;
+      }
+
+      #intro {
+        font-size: 26px;
+      }
+
+      #cakeText {
+        font-size: 30px;
+      }
+
+      #content h1 {
+        font-size: 42px;
+      }
+
+      #content h2 {
+        font-size: 28px;
+      }
+
+      #content p {
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .stickers {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
@@ -117,32 +183,44 @@
 <body>
   <div class="container">
     <div id="countdown">3</div>
-    <div id="intro">ก๊อกๆ...</div>
+
+    <div id="intro"></div>
+
+    <div id="cakeSection">
+      <img src="cake.png" alt="cake" id="cakeImg">
+      <div id="cakeText">เค้กกกกก 🎂</div>
+    </div>
 
     <div id="content">
-      <h1>Happy Birthday 🎂</h1>
-      <h2>to you <span class="glow-name">Blue</span> 🩵</h2>
+      <h1>Happy Birthday 💐</h1>
+      <h2>to <span class="glow-name">Blue</span> 🩵</h2>
       <p>
-        ขอให้วันนี้ เป็นวันที่น่ารัก ที่สุดสำหรับบลู<br>
-        โตขึ้นอีกปีแย้ววว มีแต่รอยยิ้ม มีความสุขมั้กๆ<br>
-        เศร้าได้ ร้องไห้ได้ แต่ต้องให้เราปลอบใจได้คนเดียวนะ<br>
-        หวังว่าจะมีโอกาสได้เป็นสาเหตุ และเจ้าของ รอยยิ้มของ บลูให้ยิ้มได้ในแต่ละวัน<br>
-        Hope you enjoy your special day Kub! 
+        ขอให้วันนี้เป็นวันที่น่ารักที่สุดสำหรับบลูนะ <br>
+        24 ครั้งแรก! โตขึ้นอีกปีแล้ว ขอให้มีแต่รอยยิ้ม และความสุขมาก ๆ เลยน้าาา<br>
+        เศร้าได้ ร้องไห้ดัง ๆ ได้เล้ยย แต่ต้องมาให้พีปลอบใจด้วยนะคั้บ <br>
+        ไม่อยากให้บลูต้องแตกสลาย ถนอมหัวใจตัวเองดี ๆ <br>
+        หวังว่าข้อความนี้จะได้เป็นหนึ่งในเหตุผลที่ทำให้บลูยิ้มได้<br>
+        Hope you enjoy your special day Kub!
       </p>
       <div class="stickers">🩵 🩵 🩵 🩵 🩵 🩵 🩵</div>
-      <div class="subtext">made for fav person </div>
+      <div class="subtext">Made for my fav person </div>
+    </div>
+  </div>
 
   <script>
     let count = 3;
     const countdown = document.getElementById("countdown");
-    const content = document.getElementById("content");
     const intro = document.getElementById("intro");
+    const cakeSection = document.getElementById("cakeSection");
+    const content = document.getElementById("content");
 
     let floatingInterval;
     let stopped = false;
 
-    const items = ["🌙","🎂","Happy","Birthday","✨","🪸","🏖️","Blue","🌊",
-    "🐬","🌷","smile","🎧","📷","֒ᰔ","Day"];
+    const items = [
+      "🌙", "🎂", "Happy", "Birthday", "✨", "🪸", "🏖️", "Blue", "🌊",
+      "🐬", "🌷", "smile", "🎧", "📷", "֒ᰔ", "Day", "🩵", "💐"
+    ];
 
     function createFloatingItem() {
       if (stopped) return;
@@ -163,41 +241,55 @@
 
     const timer = setInterval(() => {
       count--;
+
       if (count > 0) {
         countdown.textContent = count;
       } else {
         clearInterval(timer);
         countdown.style.display = "none";
 
-        // ประโยคแรก
+        // 1) ประโยคแรก
         intro.style.display = "block";
-        intro.textContent = "Hi!";
-
-        // ประโยคที่สอง
-        intro.textContent = "wait a second... i have something to you";
+        intro.textContent = "Hi! วันนี้วันอะไรน้าาา";
 
         setTimeout(() => {
-          // ประโยคที่สาม
-          intro.textContent = "ummm... I want to say...";
+          // 2) ประโยคสอง
+          intro.textContent = "ถ้าได้เห็นข้อความนี้ ต่อไปต้องหลับตาอธิฐาน แล้วนะ";
 
           setTimeout(() => {
+            // 3) แสดงเค้ก
             intro.style.display = "none";
-            content.style.display = "block";
+            cakeSection.style.display = "block";
 
-            // เริ่มสติ๊กเกอร์
-            floatingInterval = setInterval(createFloatingItem, 300);
-
-            // หยุดหลัง 20 วิ
             setTimeout(() => {
-              stopped = true;
-              clearInterval(floatingInterval);
+              // 4) ซ่อนเค้ก แล้วขึ้นประโยคต่อ
+              cakeSection.style.display = "none";
+              intro.style.display = "block";
+              intro.textContent = "พี อยากจะบอกว่า";
 
-              document.querySelectorAll(".floating").forEach((el) => {
-                el.remove();
-              });
-            }, 20000);
+              setTimeout(() => {
+                // 5) แสดงคำอวยพร
+                intro.style.display = "none";
+                content.style.display = "block";
 
-          }, 2000);
+                // เริ่มสติ๊กเกอร์
+                floatingInterval = setInterval(createFloatingItem, 300);
+
+                // หยุดหลัง 20 วิ
+                setTimeout(() => {
+                  stopped = true;
+                  clearInterval(floatingInterval);
+
+                  document.querySelectorAll(".floating").forEach((el) => {
+                    el.remove();
+                  });
+                }, 20000);
+
+              }, 2000);
+
+            }, 3000);
+
+          }, 5000);
 
         }, 2000);
       }
